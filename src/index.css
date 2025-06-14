@@ -1925,3 +1925,11 @@ textarea:focus {
   font-weight: 300;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.test{
+  color: #000;
+  background-color: white;
+}
+.test::placeholder{
+  
+  color: #ffffff;
+}

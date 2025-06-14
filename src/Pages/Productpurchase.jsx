@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Productpurchase = () => {
   const { state: product } = useLocation();
   const [quantity, setQuantity] = useState(1);
+const navigate = useNavigate()
+
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -130,7 +132,7 @@ const Productpurchase = () => {
           <button onClick={increase}>+</button>
         </div>
       </div>
-
+{/* 
       <div className="form-section" style={{ marginBottom: "20px" }}>
         <input
           name="name"
@@ -156,11 +158,13 @@ const Productpurchase = () => {
           placeholder="City"
           style={{ display: "block", marginBottom: 10, padding: 8, width: "100%" }}
         />
-      </div>
+      </div> */}
 
       <button
         className="cod-button"
-        onClick={handleCashOnDelivery}
+        onClick={()=>{
+navigate('/shop')
+        }}
         style={{
           background: "#000",
           color: "#fff",
@@ -206,6 +210,7 @@ const Productpurchase = () => {
             <input
               type="text"
               placeholder="Bracelet Color"
+              className="test"
               value={popupData.color}
               onChange={(e) =>
                 setPopupData({ ...popupData, color: e.target.value })
